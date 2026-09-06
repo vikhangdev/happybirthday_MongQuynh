@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc mừng sinh nhật Mộng Quỳnh</title>
+<link rel = "stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div class="fireflies" id="fireflies"></div>
+<div class="falling-icons" id="fallingIcons" aria-hidden="true"></div>
+
+<!-- Nút bật/tắt nhạc nền: có nhạc tự phát khi vào trang, bấm để tắt/mở -->
+<button class="music-btn" id="musicToggle" aria-label="Tắt nhạc nền" aria-pressed="true">
+  <svg viewBox="0 0 24 24" fill="none" id="musicIcon">
+    <path d="M9 18V5l12-2v13" stroke="var(--cream)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="6" cy="18" r="3" stroke="var(--cream)" stroke-width="1.6"/>
+    <circle cx="18" cy="16" r="3" stroke="var(--cream)" stroke-width="1.6"/>
+    <!-- Dấu gạch chéo, chỉ hiện khi nhạc đang tắt -->
+    <line id="muteSlash" x1="3" y1="21" x2="21" y2="3" stroke="var(--blush)" stroke-width="1.8" stroke-linecap="round" style="display:none"/>
+  </svg>
+</button>
+
+<!-- Đổi đường dẫn "nhac.mp3" thành file nhạc của bạn (đặt cùng thư mục với file html này) -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="assests/audio/Chucmungsinhnhat.mp3" type="audio/mpeg">
+</audio>
+
+<main class="hero">
+  <p class="eyebrow">Gửi đến</p>
+
+  <!-- ĐỔI TÊN CÔ ẤY Ở ĐÂY -->
+  <h1 class="name">Mộng Quỳnh</h1>
+  <p class="subtitle">Chúc mừng sinh nhật của em tuổi 20 🎂❤️</p>
+
+  <!-- Khung ảnh: thay src="anh-cua-em.jpg" bằng ảnh bạn muốn dùng -->
+  <div class="photo-frame">
+    <div class="inner">
+      <img src="assests/images/Mong_Quynh.jpg" alt="" onerror="this.remove()">
+      <!-- <span class="placeholder" id="photoPlaceholder">Đặt ảnh<br>"anh-cua-em.jpg"<br>cùng thư mục nhé</span> -->
+    </div>
+  </div>
+
+  <div class="envelope-wrap">
+    <button class="envelope-btn" id="envelopeBtn" aria-label="Mở phong thư để đọc lời chúc">
+      <svg viewBox="0 0 200 130">
+        <rect x="4" y="18" width="192" height="104" rx="6" fill="#f3e6d0" stroke="#c9a76a" stroke-width="2"/>
+        <g class="letter-peek">
+          <rect x="26" y="6" width="148" height="70" rx="4" fill="#fffaf0" stroke="#e3cfa0" stroke-width="1.4"/>
+        </g>
+        <path d="M4 24 L100 84 L196 24" fill="none" stroke="#c9a76a" stroke-width="2"/>
+        <polygon class="flap" points="4,20 100,80 196,20 196,18 100,74 4,18" fill="#e9d3ab" stroke="#c9a76a" stroke-width="2"/>
+        <g class="seal">
+          <circle cx="100" cy="62" r="16" fill="#c9536b"/>
+          <path d="M100 55 c-4 -5 -12 -3 -12 3 c0 6 12 12 12 14 c0 -2 12 -8 12 -14 c0 -6 -8 -8 -12 -3 z" fill="#fbdfe4"/>
+        </g>
+      </svg>
+    </button>
+    <p class="hint">Em hãy chạm vào phong thư để đọc lời nhắn của anh nhé<br>được gửi bằng tất cả sự chân thành ❤️</p>
+  </div>
+</main>
+<!-- Lớp phủ hiển thị lá thư -->
+<div class="letter-overlay" id="letterOverlay" role="dialog" aria-modal="true" aria-label="Lời chúc sinh nhật">
+  <div class="letter-card">
+    <button class="close-btn" id="closeLetter" aria-label="Đóng">×</button>
+    <div class="letter-content">
+      <h2>Gửi em,</h2>
+      <!-- SỬA NỘI DUNG LÁ THƯ Ở ĐÂY -->
+      <p>Hôm nay là một ngày đặc biệt, vì đó là ngày em sinh ra trên đời và với anh đó cũng là một trong những điều may mắn nhất.</p>
+      <p>Anh không giỏi nói ra những điều mình nghĩ, nhưng anh muốn em biết rằng nụ cười của em luôn khiến một ngày bình thường trở nên dễ chịu hơn rất nhiều.</p>
+      <p>Chúc em sinh nhật thật vui, thật nhiều sức khỏe và luôn giữ được sự trong trẻo, đáng yêu như chính con người em vậy. Mong mọi điều em mong ước đều thành hiện thực.</p>
+      <p>Chúc mừng sinh nhật em nhé. 🎂❤️</p>
+      <p class="signoff">Một người luôn âm thầm chúc em hạnh phúc</p>
+    </div>
+  </div>
+</div>
+<script src="js/main.js"></script>
+
+</body>
+</html>
